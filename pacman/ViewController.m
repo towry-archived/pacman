@@ -7,19 +7,29 @@
 //
 
 #import "ViewController.h"
+#import "MainView.h"
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
-
-	// Do any additional setup after loading the view.
+	
+	MainView *view = (MainView *)[self view];
+	[view setDelegate:self];
+	[self setUpConstraints];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
 	[super setRepresentedObject:representedObject];
+}
 
-	// Update the view, if already loaded.
+- (void)startGame:(NSEvent *)event {
+	NSLog(@"Game started");
+}
+
+- (void)setUpConstraints {
+	NSLayoutGuide *margins = self.view.layoutGuides;
 }
 
 @end

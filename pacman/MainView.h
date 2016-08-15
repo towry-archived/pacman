@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainView.h
 //  pacman
 //
 //  Created by towry on 8/15/16.
@@ -9,9 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "ViewDelegate.h"
 
-@interface ViewController : NSViewController <ViewDelegate>
+@interface MainView : NSView
 
-@property(weak) IBOutlet NSWindow *window;
+@property(nonatomic, readwrite, weak) id<ViewDelegate> delegate;
 
 @end
-

@@ -12,6 +12,8 @@
 		83962ADE1D6111F200DB64E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83962ADD1D6111F200DB64E9 /* ViewController.m */; };
 		83962AE01D6111F200DB64E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83962ADF1D6111F200DB64E9 /* Assets.xcassets */; };
 		83962AE31D6111F200DB64E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83962AE11D6111F200DB64E9 /* Main.storyboard */; };
+		83962AEF1D61130E00DB64E9 /* pacman.png in Resources */ = {isa = PBXBuildFile; fileRef = 83962AEE1D61130E00DB64E9 /* pacman.png */; };
+		83962AF21D6116A300DB64E9 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83962AF11D6116A300DB64E9 /* MainView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		83962ADF1D6111F200DB64E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83962AE21D6111F200DB64E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83962AE41D6111F200DB64E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83962AEE1D61130E00DB64E9 /* pacman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pacman.png; sourceTree = "<group>"; };
+		83962AF01D6116A300DB64E9 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
+		83962AF11D6116A300DB64E9 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
+		83962AF41D61190800DB64E9 /* ViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +62,11 @@
 		83962AD51D6111F200DB64E9 /* pacman */ = {
 			isa = PBXGroup;
 			children = (
+				83962AF31D6118C100DB64E9 /* Class */,
+				83962AED1D61125200DB64E9 /* View */,
+				83962AEB1D61121700DB64E9 /* Controller */,
 				83962AD61D6111F200DB64E9 /* AppDelegate.h */,
 				83962AD71D6111F200DB64E9 /* AppDelegate.m */,
-				83962ADC1D6111F200DB64E9 /* ViewController.h */,
-				83962ADD1D6111F200DB64E9 /* ViewController.m */,
 				83962ADF1D6111F200DB64E9 /* Assets.xcassets */,
 				83962AE11D6111F200DB64E9 /* Main.storyboard */,
 				83962AE41D6111F200DB64E9 /* Info.plist */,
@@ -71,9 +78,36 @@
 		83962AD91D6111F200DB64E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				83962AEE1D61130E00DB64E9 /* pacman.png */,
 				83962ADA1D6111F200DB64E9 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83962AEB1D61121700DB64E9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				83962ADC1D6111F200DB64E9 /* ViewController.h */,
+				83962ADD1D6111F200DB64E9 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		83962AED1D61125200DB64E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83962AF01D6116A300DB64E9 /* MainView.h */,
+				83962AF11D6116A300DB64E9 /* MainView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		83962AF31D6118C100DB64E9 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				83962AF41D61190800DB64E9 /* ViewDelegate.h */,
+			);
+			name = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +169,7 @@
 			files = (
 				83962AE01D6111F200DB64E9 /* Assets.xcassets in Resources */,
 				83962AE31D6111F200DB64E9 /* Main.storyboard in Resources */,
+				83962AEF1D61130E00DB64E9 /* pacman.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83962ADE1D6111F200DB64E9 /* ViewController.m in Sources */,
+				83962AF21D6116A300DB64E9 /* MainView.m in Sources */,
 				83962ADB1D6111F200DB64E9 /* main.m in Sources */,
 				83962AD81D6111F200DB64E9 /* AppDelegate.m in Sources */,
 			);
