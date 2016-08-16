@@ -12,23 +12,23 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
-	[super viewDidLoad];
-	
-	// setup start screen delegate
-	StartScreenView *view = (StartScreenView *)[self startScreen];
-	[view setDelegate:self];
-	// draw the view background
-	[self.view setWantsLayer:YES];
-	self.view.layer.backgroundColor = [NSColor blackColor].CGColor;
+    [super viewDidLoad];
+    
+    // setup start screen delegate
+    StartScreenView *view = (StartScreenView *)[self startScreen];
+    [view setDelegate:self];
+    // draw the view background
+    [self.view setWantsLayer:YES];
+    self.view.layer.backgroundColor = [NSColor blackColor].CGColor;
 }
 
 - (void)setRepresentedObject:(id)representedObject {
-	[super setRepresentedObject:representedObject];
+    [super setRepresentedObject:representedObject];
 }
 
 // start the game
 - (void)startGame:(NSEvent *)event {
-	[self performSegueWithIdentifier:@"pacmanId" sender:self];
+    [self performSegueWithIdentifier:@"pacmanId" sender:self];
 }
 
 @end

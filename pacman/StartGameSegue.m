@@ -12,9 +12,9 @@
 @implementation StartGameSegue
 
 - (void)perform {
-	id animator = [[StartGameAnimator alloc] init];
-	[self.sourceController presentViewController:self.destinationController
-										animator:animator];
+    id animator = [[StartGameAnimator alloc] init];
+    [self.sourceController presentViewController:self.destinationController
+                                        animator:animator];
 }
 
 @end
