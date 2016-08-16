@@ -12,6 +12,7 @@
 @interface ViewController : NSViewController <ViewDelegate>
 
 @property(weak) IBOutlet NSWindow *window;
+@property(nonatomic, weak) IBOutlet NSView *startScreen;
 
 @end
 

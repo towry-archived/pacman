@@ -7,29 +7,28 @@
 //
 
 #import "ViewController.h"
-#import "MainView.h"
+#import "StartScreenView.h"
 
 @implementation ViewController
-
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	MainView *view = (MainView *)[self view];
+	// setup start screen delegate
+	StartScreenView *view = (StartScreenView *)[self startScreen];
 	[view setDelegate:self];
-	[self setUpConstraints];
+	// draw the view background
+	[self.view setWantsLayer:YES];
+	self.view.layer.backgroundColor = [NSColor blackColor].CGColor;
 }
 
 - (void)setRepresentedObject:(id)representedObject {
 	[super setRepresentedObject:representedObject];
 }
 
+// start the game
 - (void)startGame:(NSEvent *)event {
-	NSLog(@"Game started");
-}
-
-- (void)setUpConstraints {
-	NSLayoutGuide *margins = self.view.layoutGuides;
+	[self performSegueWithIdentifier:@"pacmanId" sender:self];
 }
 
 @end

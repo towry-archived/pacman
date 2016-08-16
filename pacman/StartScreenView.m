@@ -1,5 +1,5 @@
 //
-//  MainView.m
+//  StartScreenView.m
 //  pacman
 //
 //  Created by towry on 8/15/16.
@@ -7,10 +7,10 @@
 //
 
 #import <math.h>
-#import "MainView.h"
+#import "StartScreenView.h"
 
 
-@implementation MainView
+@implementation StartScreenView
 
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
@@ -21,23 +21,32 @@
 	[self oatDrawStartScreen];
 }
 
+- (BOOL)acceptsFirstResponder {
+	return YES;
+}
+
 - (void)oatDrawStartScreen {
+	
 	NSImage *image = [NSImage imageNamed:@"pacman.png"];
-	
 	NSRect theBounds = self.bounds;
-	
 	NSSize imageSize = image.size;
-	CGFloat left = fabs(theBounds.size.width / 2.0 - imageSize.width / 2.0);
-	NSPoint origin = NSMakePoint(left, theBounds.size.height - 48 - 20);
+	
+	/*** start draw the logo */
+	CGFloat logoWidth = 182;
+	CGFloat logoHeight = 47;
+	CGFloat logoOffsetTop = 100;
+	
+	CGFloat left = fabs(theBounds.size.width / 2.0 - logoWidth / 2.0);
+	
+	NSPoint origin = NSMakePoint(left, theBounds.size.height - logoHeight - logoOffsetTop);
 	NSRect fromRect = NSMakeRect(2, imageSize.height - 50, 182, 47);
 	CGFloat delta = 1.0;
 	
-//	NSLog(@"%f:%f", theBounds.size.width / 2, imageSize.width / 2);
-	
 	[image drawAtPoint:origin fromRect:fromRect operation:NSCompositeSourceOver fraction:delta];
+	/**< end draw the logo */
 }
 
-- (void)mouseDown:(NSEvent *)theEvent {
+- (void)keyDown:(NSEvent *)theEvent {
 	if (_delegate && [_delegate respondsToSelector:@selector(startGame:)]) {
 		[_delegate startGame:theEvent];
 	}

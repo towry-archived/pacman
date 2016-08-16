@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "ViewDelegate.h"
 
-@interface MainView : NSView
+@interface StartScreenView : NSView
 
 @property(nonatomic, readwrite, weak) id<ViewDelegate> delegate;
 
