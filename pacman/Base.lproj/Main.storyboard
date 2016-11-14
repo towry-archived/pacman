@@ -652,7 +652,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Pacman" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="411" height="479"/>
@@ -719,25 +719,17 @@
             </objects>
             <point key="canvasLocation" x="40.5" y="1052.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Controller-->
         <scene sceneID="64q-Wj-QeH">
             <objects>
-                <viewController id="nIA-E9-LQX" sceneMemberID="viewController">
-                    <view key="view" id="bqY-2t-H5t">
+                <viewController id="nIA-E9-LQX" customClass="GameController" sceneMemberID="viewController">
+                    <view key="view" id="bqY-2t-H5t" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="411" height="512"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JQp-25-oo8">
-                                <rect key="frame" x="169" y="248" width="72" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Hello world" id="BkZ-CQ-Eu7">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                        </subviews>
                     </view>
+                    <connections>
+                        <outlet property="skView" destination="bqY-2t-H5t" id="T2u-Y8-zft"/>
+                    </connections>
                 </viewController>
                 <customObject id="KGC-bk-9w6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

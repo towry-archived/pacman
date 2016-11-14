@@ -20,6 +20,11 @@
     // draw the view background
     [self.view setWantsLayer:YES];
     self.view.layer.backgroundColor = [NSColor blackColor].CGColor;
+    
+//    SKView *spriteView = (SKView *) self.view;
+//    spriteView.showsDrawCount = YES;
+//    spriteView.showsNodeCount = YES;
+//    spriteView.showsFPS = YES;
 }
 
 - (void)setRepresentedObject:(id)representedObject {
