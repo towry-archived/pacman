@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8375E34A1D636297007028C1 /* StartGameSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8375E3491D636297007028C1 /* StartGameSegue.m */; };
-		8375E34D1D6362FB007028C1 /* StartGameAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8375E34C1D6362FB007028C1 /* StartGameAnimator.m */; };
+		831594781DDAB6770050AFC9 /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 831594771DDAB6770050AFC9 /* StartScene.m */; };
+		8315947C1DDACD000050AFC9 /* pacman_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8315947B1DDACD000050AFC9 /* pacman_logo.png */; };
+		8315947E1DDACD200050AFC9 /* pacman_blue_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 8315947D1DDACD200050AFC9 /* pacman_blue_map.png */; };
 		83962AD81D6111F200DB64E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83962AD71D6111F200DB64E9 /* AppDelegate.m */; };
 		83962ADB1D6111F200DB64E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83962ADA1D6111F200DB64E9 /* main.m */; };
 		83962ADE1D6111F200DB64E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83962ADD1D6111F200DB64E9 /* ViewController.m */; };
 		83962AE01D6111F200DB64E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83962ADF1D6111F200DB64E9 /* Assets.xcassets */; };
 		83962AE31D6111F200DB64E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83962AE11D6111F200DB64E9 /* Main.storyboard */; };
 		83962AEF1D61130E00DB64E9 /* pacman.png in Resources */ = {isa = PBXBuildFile; fileRef = 83962AEE1D61130E00DB64E9 /* pacman.png */; };
-		83962AF21D6116A300DB64E9 /* StartScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83962AF11D6116A300DB64E9 /* StartScreenView.m */; };
 		83A782581DD9F4F800A2F284 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A782571DD9F4F800A2F284 /* GameScene.m */; };
 		83A7825B1DD9F6B600A2F284 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7825A1DD9F6B600A2F284 /* GameController.m */; };
 		83A7825E1DDAA5F100A2F284 /* SpaceshipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7825D1DDAA5F100A2F284 /* SpaceshipScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8375E3481D636297007028C1 /* StartGameSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartGameSegue.h; sourceTree = "<group>"; };
-		8375E3491D636297007028C1 /* StartGameSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartGameSegue.m; sourceTree = "<group>"; };
-		8375E34B1D6362FB007028C1 /* StartGameAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartGameAnimator.h; sourceTree = "<group>"; };
-		8375E34C1D6362FB007028C1 /* StartGameAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartGameAnimator.m; sourceTree = "<group>"; };
+		831594761DDAB6770050AFC9 /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
+		831594771DDAB6770050AFC9 /* StartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScene.m; sourceTree = "<group>"; };
+		8315947B1DDACD000050AFC9 /* pacman_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pacman_logo.png; path = ../../../../../Downloads/pacman_assets/images/pacman_logo.png; sourceTree = "<group>"; };
+		8315947D1DDACD200050AFC9 /* pacman_blue_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pacman_blue_map.png; path = ../../../../../Downloads/pacman_assets/images/pacman_blue_map.png; sourceTree = "<group>"; };
 		83962AD31D6111F200DB64E9 /* pacman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pacman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83962AD61D6111F200DB64E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83962AD71D6111F200DB64E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -36,8 +36,6 @@
 		83962AE21D6111F200DB64E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83962AE41D6111F200DB64E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83962AEE1D61130E00DB64E9 /* pacman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pacman.png; sourceTree = "<group>"; };
-		83962AF01D6116A300DB64E9 /* StartScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScreenView.h; sourceTree = "<group>"; };
-		83962AF11D6116A300DB64E9 /* StartScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScreenView.m; sourceTree = "<group>"; };
 		83962AF41D61190800DB64E9 /* ViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewDelegate.h; sourceTree = "<group>"; };
 		83A782561DD9F4F800A2F284 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		83A782571DD9F4F800A2F284 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
@@ -58,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		831594791DDACCD80050AFC9 /* PacmanAssets.atlas */ = {
+			isa = PBXGroup;
+			children = (
+				8315947B1DDACD000050AFC9 /* pacman_logo.png */,
+				8315947D1DDACD200050AFC9 /* pacman_blue_map.png */,
+			);
+			path = PacmanAssets.atlas;
+			sourceTree = "<group>";
+		};
 		83962ACA1D6111F200DB64E9 = {
 			isa = PBXGroup;
 			children = (
@@ -77,9 +84,9 @@
 		83962AD51D6111F200DB64E9 /* pacman */ = {
 			isa = PBXGroup;
 			children = (
+				831594791DDACCD80050AFC9 /* PacmanAssets.atlas */,
 				83A782551DD9F4E200A2F284 /* Scene */,
 				83962AF31D6118C100DB64E9 /* Class */,
-				83962AED1D61125200DB64E9 /* View */,
 				83962AEB1D61121700DB64E9 /* Controller */,
 				83962AD61D6111F200DB64E9 /* AppDelegate.h */,
 				83962AD71D6111F200DB64E9 /* AppDelegate.m */,
@@ -111,23 +118,10 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		83962AED1D61125200DB64E9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				83962AF01D6116A300DB64E9 /* StartScreenView.h */,
-				83962AF11D6116A300DB64E9 /* StartScreenView.m */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
 		83962AF31D6118C100DB64E9 /* Class */ = {
 			isa = PBXGroup;
 			children = (
 				83962AF41D61190800DB64E9 /* ViewDelegate.h */,
-				8375E3481D636297007028C1 /* StartGameSegue.h */,
-				8375E3491D636297007028C1 /* StartGameSegue.m */,
-				8375E34B1D6362FB007028C1 /* StartGameAnimator.h */,
-				8375E34C1D6362FB007028C1 /* StartGameAnimator.m */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -139,6 +133,8 @@
 				83A782571DD9F4F800A2F284 /* GameScene.m */,
 				83A7825C1DDAA5F100A2F284 /* SpaceshipScene.h */,
 				83A7825D1DDAA5F100A2F284 /* SpaceshipScene.m */,
+				831594761DDAB6770050AFC9 /* StartScene.h */,
+				831594771DDAB6770050AFC9 /* StartScene.m */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -204,6 +200,8 @@
 			files = (
 				83962AE01D6111F200DB64E9 /* Assets.xcassets in Resources */,
 				83962AE31D6111F200DB64E9 /* Main.storyboard in Resources */,
+				8315947E1DDACD200050AFC9 /* pacman_blue_map.png in Resources */,
+				8315947C1DDACD000050AFC9 /* pacman_logo.png in Resources */,
 				83962AEF1D61130E00DB64E9 /* pacman.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,13 +215,11 @@
 			files = (
 				83A7825E1DDAA5F100A2F284 /* SpaceshipScene.m in Sources */,
 				83962ADE1D6111F200DB64E9 /* ViewController.m in Sources */,
-				83962AF21D6116A300DB64E9 /* StartScreenView.m in Sources */,
 				83962ADB1D6111F200DB64E9 /* main.m in Sources */,
 				83962AD81D6111F200DB64E9 /* AppDelegate.m in Sources */,
-				8375E34A1D636297007028C1 /* StartGameSegue.m in Sources */,
 				83A7825B1DD9F6B600A2F284 /* GameController.m in Sources */,
 				83A782581DD9F4F800A2F284 /* GameScene.m in Sources */,
-				8375E34D1D6362FB007028C1 /* StartGameAnimator.m in Sources */,
+				831594781DDAB6770050AFC9 /* StartScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 5S95K97BRD;
 				INFOPLIST_FILE = pacman/Info.plist;
@@ -345,7 +341,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 5S95K97BRD;
 				INFOPLIST_FILE = pacman/Info.plist;

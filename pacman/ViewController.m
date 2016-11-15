@@ -7,29 +7,31 @@
 //
 
 #import "ViewController.h"
-#import "StartScreenView.h"
+#import "StartScene.h"
+
+@interface ViewController()
+
+@property (assign) IBOutlet SKView *skView;
+
+@end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // setup start screen delegate
-    StartScreenView *view = (StartScreenView *)[self startScreen];
-    [view setDelegate:self];
-    // draw the view background
-    [self.view setWantsLayer:YES];
-    self.view.layer.backgroundColor = [NSColor blackColor].CGColor;
+    StartScene *scene = [[StartScene alloc] initWithSize:CGSizeMake(768, 1024)];
+    scene.scaleMode = SKSceneScaleModeAspectFill;
+    
+    [self.skView presentScene:scene];
+    
+    self.skView.showsFPS = YES;
+    self.skView.showsNodeCount = YES;
 }
 
 // Why use this?
-- (void)setRepresentedObject:(id)representedObject {
-    [super setRepresentedObject:representedObject];
-}
-
-// start the game
-- (void)startGame:(NSEvent *)event {
-    [self performSegueWithIdentifier:@"pacmanId" sender:self];
-}
+//- (void)setRepresentedObject:(id)representedObject {
+//    [super setRepresentedObject:representedObject];
+//}
 
 @end

@@ -10,9 +10,7 @@
 #define ViewDelegate_h
 
 @protocol ViewDelegate <NSObject>
-
-- (void)startGame:(NSEvent *)event;
-
+// leave it empty.
 @end
 
 #endif /* ViewDelegate_h */

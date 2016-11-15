@@ -8,11 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 #import "ViewDelegate.h"
+#import <SpriteKit/SpriteKit.h>
 
 @interface ViewController : NSViewController <ViewDelegate>
 
 @property(weak) IBOutlet NSWindow *window;
-@property(nonatomic, weak) IBOutlet NSView *startScreen;
 
 @end
 
