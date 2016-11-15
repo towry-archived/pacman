@@ -13,6 +13,15 @@
 @interface ViewController : NSViewController <ViewDelegate>
 
 @property(weak) IBOutlet NSWindow *window;
+@property BOOL bGameStarted;
 
 @end
 
+
+// Custom segue
+@interface StartGameSegue : NSStoryboardSegue
+@end
+
+// segue animator
+@interface StartGameAnimator : NSObject<NSViewControllerPresentationAnimator>
+@end

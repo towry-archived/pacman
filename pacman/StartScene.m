@@ -16,6 +16,8 @@
 
 @implementation StartScene
 
+#pragma mark - Override
+
 - (void)didMoveToView:(SKView *)view {
     if (!self.contentCreated) {
         [self createContents];
@@ -23,8 +25,43 @@
     }
 }
 
+#pragma mark - Method
+
 - (void)createContents {
+    self.backgroundColor = [SKColor blackColor];
+    self.scaleMode = SKSceneScaleModeAspectFit;
     
+    [self addChild:[self getLogoNode]];
+}
+
+- (SKSpriteNode *)getLogoNode {
+    // logo.
+    SKTexture *logo = [SKTexture textureWithImageNamed:@"pacman_logo.png"];
+    SKSpriteNode *logoNode = [SKSpriteNode spriteNodeWithTexture:logo];
+    
+    
+    CGFloat scaleFactor = 2;
+    CGFloat logoWidth = 187 * scaleFactor;
+    CGFloat logoHeight = 48 * scaleFactor;
+    
+    [logoNode scaleToSize:CGSizeMake(logoWidth, logoHeight)];
+    
+    // position the logo.
+    CGFloat logoTop = 80 + logoNode.size.height;
+    CGFloat logoLeft = self.size.width / 2;
+    logoNode.position = CGPointMake(logoLeft, self.size.height - logoTop);
+    
+    return logoNode;
+}
+
+- (void)keyUp:(NSEvent *)event {
+    NSString *keyPressed = [event characters];
+    if ([keyPressed isEqualToString:@" "]) {
+        // start
+        if (self.viewDelegate && [self.viewDelegate respondsToSelector:@selector(startGame)]) {
+            [self.viewDelegate startGame];
+        }
+    }
 }
 
 @end

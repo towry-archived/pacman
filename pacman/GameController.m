@@ -13,14 +13,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    GameScene *scene = [[GameScene alloc] initWithSize:CGSizeMake(768, 1024)];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    self.skView.alphaValue = 0.0;
+    // NSLog(@"%f - %f", self.view.frame.size.width, self.view.frame.size.height);
+    GameScene *scene = [[GameScene alloc] initWithSize:CGSizeMake(self.view.frame.size.width
+, self.view.frame.size.height)];
+    scene.scaleMode = SKSceneScaleModeAspectFit;
     
     [self.skView presentScene:scene];
     
+#if DEBUG
     self.skView.showsFPS = YES;
     self.skView.showsNodeCount = YES;
+#endif
 }
 
 @end
