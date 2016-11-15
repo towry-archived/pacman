@@ -24,16 +24,18 @@
     // ajust size
     [viewController.view setFrame:[fromViewController.view frame]];
     viewController.view.layer.backgroundColor = [NSColor blackColor].CGColor;
-    
+    NSLog(@"show it");
     // show it
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
-        context.duration = 0.6;
+        NSLog(@"show it here");
+        context.duration = 2.3;
         viewController.view.animator.alphaValue = 1.0;
     } completionHandler:nil];
 }
 
 // hide
 - (void)animateDismissalOfViewController:(NSViewController *)viewController fromViewController:(NSViewController *)fromViewController {
+    NSLog(@"hidding");
     // for smooth animation
     viewController.view.wantsLayer = YES;
     // redraw policy

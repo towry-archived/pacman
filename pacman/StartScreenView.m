@@ -9,6 +9,11 @@
 #import <math.h>
 #import "StartScreenView.h"
 
+@interface StartScreenView()
+
+@property(nonatomic) BOOL isGameStarted;
+
+@end
 
 @implementation StartScreenView
 
@@ -47,6 +52,10 @@
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
+    if (self.isGameStarted) {
+        return;
+    }
+    
     if (_delegate && [_delegate respondsToSelector:@selector(startGame:)]) {
         [_delegate startGame:theEvent];
     }
