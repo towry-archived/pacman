@@ -18,6 +18,7 @@
 		83962AF21D6116A300DB64E9 /* StartScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83962AF11D6116A300DB64E9 /* StartScreenView.m */; };
 		83A782581DD9F4F800A2F284 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A782571DD9F4F800A2F284 /* GameScene.m */; };
 		83A7825B1DD9F6B600A2F284 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7825A1DD9F6B600A2F284 /* GameController.m */; };
+		83A7825E1DDAA5F100A2F284 /* SpaceshipScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7825D1DDAA5F100A2F284 /* SpaceshipScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		83A782571DD9F4F800A2F284 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		83A782591DD9F6B600A2F284 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 		83A7825A1DD9F6B600A2F284 /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		83A7825C1DDAA5F100A2F284 /* SpaceshipScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceshipScene.h; sourceTree = "<group>"; };
+		83A7825D1DDAA5F100A2F284 /* SpaceshipScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpaceshipScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +137,8 @@
 			children = (
 				83A782561DD9F4F800A2F284 /* GameScene.h */,
 				83A782571DD9F4F800A2F284 /* GameScene.m */,
+				83A7825C1DDAA5F100A2F284 /* SpaceshipScene.h */,
+				83A7825D1DDAA5F100A2F284 /* SpaceshipScene.m */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83A7825E1DDAA5F100A2F284 /* SpaceshipScene.m in Sources */,
 				83962ADE1D6111F200DB64E9 /* ViewController.m in Sources */,
 				83962AF21D6116A300DB64E9 /* StartScreenView.m in Sources */,
 				83962ADB1D6111F200DB64E9 /* main.m in Sources */,
