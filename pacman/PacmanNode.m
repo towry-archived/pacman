@@ -15,8 +15,7 @@
 @end
 
 @implementation PacmanNode
-
-#pragma mark - override
+#pragma mark - Override
 - (id)init {
     if (self = [super init]) {
         SKTexture *beanTexture = [SKTexture textureWithImageNamed:@"pacman_left_open.png"];
@@ -50,7 +49,29 @@
     [self setTexture:nextTexture];
 }
 
-#pragma mark - method
+#pragma mark - Event
+- (void)handleKeyEvent:(NSEvent*)event {
+    // Handle arrow key event.
+    unichar character = [[event characters] characterAtIndex:0];
+    switch (character) {
+        case NSUpArrowFunctionKey:
+            self.direction = DirectionUp;
+            break;
+        case NSDownArrowFunctionKey:
+            self.direction = DirectionDown;
+            break;
+        case NSLeftArrowFunctionKey:
+            self.direction = DirectionLeft;
+            break;
+        case NSRightArrowFunctionKey:
+            self.direction = DirectionRight;
+            break;
+        default:
+            return;
+    }
+}
+
+#pragma mark - Method
 
 + (NSString *)textureName:(NSInteger)index direction:(enum PacmanNodeDirection)direction {
     static NSArray *_textureNames;
@@ -71,7 +92,7 @@
     
     NSString *placeholder = nil;
     switch (direction) {
-        case DirectionTop:
+        case DirectionUp:
             placeholder = @"up";
             break;
         case DirectionLeft:
@@ -80,8 +101,8 @@
         case DirectionRight:
             placeholder = @"right";
             break;
-        case DirectionBottom:
-            placeholder = @"bottom";
+        case DirectionDown:
+            placeholder = @"down";
             break;
         default:
             placeholder = @"top";

@@ -61,4 +61,17 @@
         [node update:currentTime];
     }
 }
+
+#pragma mark - Event
+- (void)keyUp:(NSEvent *)event {
+    NSArray *nodes = @[ @"pacman" ];
+    SKNode *node = nil;
+    
+    for (NSString *name in nodes) {
+        node = [self childNodeWithName:name];
+        if ([node respondsToSelector:@selector(handleKeyEvent:)]) {
+            [node performSelector:@selector(handleKeyEvent:) withObject:event];
+        }
+    }
+}
 @end
