@@ -10,17 +10,14 @@
 #import "StartScene.h"
 
 @interface ViewController()
-
 @property (assign) IBOutlet SKView *skView;
-
 @end
 
 @implementation ViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    StartScene *scene = [[StartScene alloc] initWithSize:CGSizeMake(768, 1024)];
+
+    StartScene *scene = [StartScene sceneWithSize:self.view.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFit;
     [scene setViewDelegate:self];
     
@@ -40,22 +37,18 @@
     
     NSLog(@"start game.");
 }
-
 @end
 
 // start game segue.
 @implementation StartGameSegue
-
 - (void)perform {
     id animator = [[StartGameAnimator alloc] init];
     [self.sourceController presentViewController:self.destinationController animator:animator];
 }
-
 @end
 
 // start game animator.
 @implementation StartGameAnimator
-
 // show.
 - (void)animatePresentationOfViewController:(NSViewController *)viewController fromViewController:(nonnull NSViewController *)fromViewController {
     viewController.view.layerContentsRedrawPolicy = NSViewLayerContentsRedrawOnSetNeedsDisplay;
@@ -75,6 +68,5 @@
 // dismiss.
 - (void)animateDismissalOfViewController:(NSViewController *)viewController fromViewController:(NSViewController *)fromViewController {
 }
-
 @end
 

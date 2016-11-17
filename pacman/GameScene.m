@@ -7,16 +7,16 @@
 //
 
 #import "GameScene.h"
+#import "PacmanNode.h"
 
 @interface GameScene()
-
 @property BOOL contentCreated;
-
+@property SKSpriteNode *pacman;
 @end
 
 @implementation GameScene
 
-#pragma mark - override
+#pragma mark - Init
 
 - (void)didMoveToView:(SKView *)view {
     if (!self.contentCreated) {
@@ -25,28 +25,41 @@
     }
 }
 
-#pragma mark - method
+#pragma mark - Init:create
 
 - (void)createSceneContents {
     self.backgroundColor = [SKColor blackColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
     
-    [self addChild: [self getMapNode]];
-    [self addChild: [self getBeanNode]];
+    [self addChild:[self getMapNode]];
+    [self addChild:[self getPacmanNode]];
 }
 
 - (SKSpriteNode *)getMapNode {
-    SKTexture *bgtexture = [SKTexture textureWithImageNamed:@"pacman_blue_map.png"];
+    SKTexture *bgtexture = [SKTexture textureWithImageNamed:@"blue_map.png"];
     SKSpriteNode *bg = [SKSpriteNode spriteNodeWithTexture:bgtexture];
     bg.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
     return bg;
 }
 
-- (SKSpriteNode *)getBeanNode {
-    SKTexture *beanTexture = [SKTexture textureWithImageNamed:@"bean_left_open.png"];
-    SKSpriteNode *beanNode = [SKSpriteNode spriteNodeWithTexture:beanTexture];
-    beanNode.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
-    return beanNode;
+- (PacmanNode *)getPacmanNode {
+    PacmanNode *pacman = [[PacmanNode alloc] init];
+    pacman.name = @"pacman";
+    
+    pacman.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
+    return pacman;
 }
 
+#pragma mark - Update
+- (void)update:(NSTimeInterval)currentTime {
+    NSArray *nodes = @[ @"pacman" ];
+    SKNode *node = nil;
+    
+    for (NSString *name in nodes) {
+        node = [self childNodeWithName:name];
+        if ([node respondsToSelector:@selector(start)]) {
+            [node performSelector:@selector(start)];
+        }
+    }
+}
 @end

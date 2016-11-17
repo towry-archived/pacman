@@ -16,7 +16,7 @@
 
 @implementation StartScene
 
-#pragma mark - Override
+#pragma mark - override
 
 - (void)didMoveToView:(SKView *)view {
     if (!self.contentCreated) {
@@ -25,7 +25,7 @@
     }
 }
 
-#pragma mark - Method
+#pragma mark - method
 
 - (void)createContents {
     self.backgroundColor = [SKColor blackColor];
@@ -36,7 +36,7 @@
 
 - (SKSpriteNode *)getLogoNode {
     // logo.
-    SKTexture *logo = [SKTexture textureWithImageNamed:@"pacman_logo.png"];
+    SKTexture *logo = [SKTexture textureWithImageNamed:@"logo.png"];
     SKSpriteNode *logoNode = [SKSpriteNode spriteNodeWithTexture:logo];
     
     
