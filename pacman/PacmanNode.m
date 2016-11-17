@@ -45,22 +45,49 @@
         self.index += 1;
     }
     
-    NSString *textureName = [[self class] textureName:self.index];
+    NSString *textureName = [[self class] textureName:self.index direction:self.direction];
     SKTexture *nextTexture = [SKTexture textureWithImageNamed:textureName];
     [self setTexture:nextTexture];
 }
 
 #pragma mark - method
 
-+ (NSString *)textureName:(NSInteger)index {
++ (NSString *)textureName:(NSInteger)index direction:(enum PacmanNodeDirection)direction {
     static NSArray *_textureNames;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
        _textureNames = @[@"pacman_full.png",
-                         @"pacman_left_open.png",
-                         @"pacman_left_open_max.png"];
+                         @"pacman_%@_open.png",
+                         @"pacman_%@_open_max.png",];
     });
     
-    return _textureNames[index];
+    if (index == 0) {
+        return _textureNames[index];
+    }
+    
+    if (index < 0 || index >= _textureNames.count) {
+        [NSException raise:@"Invalid index value" format:@"index of %ld is invalid", (long)index];
+    }
+    
+    NSString *placeholder = nil;
+    switch (direction) {
+        case DirectionTop:
+            placeholder = @"up";
+            break;
+        case DirectionLeft:
+            placeholder = @"left";
+            break;
+        case DirectionRight:
+            placeholder = @"right";
+            break;
+        case DirectionBottom:
+            placeholder = @"bottom";
+            break;
+        default:
+            placeholder = @"top";
+            break;
+    }
+    
+    return [NSString stringWithFormat:_textureNames[index], placeholder];
 }
 @end
