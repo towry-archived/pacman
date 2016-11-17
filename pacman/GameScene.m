@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 #import "PacmanNode.h"
+#import "ViewDelegate.h"
 
 @interface GameScene()
 @property BOOL contentCreated;
@@ -53,13 +54,11 @@
 #pragma mark - Update
 - (void)update:(NSTimeInterval)currentTime {
     NSArray *nodes = @[ @"pacman" ];
-    SKNode *node = nil;
+    SKNode<Character> *node = nil;
     
     for (NSString *name in nodes) {
-        node = [self childNodeWithName:name];
-        if ([node respondsToSelector:@selector(start)]) {
-            [node performSelector:@selector(start)];
-        }
+        node = (SKNode<Character> *)[self childNodeWithName:name];
+        [node update:currentTime];
     }
 }
 @end
