@@ -1,6 +1,6 @@
 ooooooooowooooooooo
 o   o   owo   o   o
-o   o   owo   o   o
+m   o   owo   o   m
 o   o   owo   o   o
 ooooooooooooooooooo
 o   owo     owo   o
@@ -8,16 +8,18 @@ o   owo     owo   o
 ooooowooowooowooooo
     owwwxwxwwwowwww
     owxxxxxxxwo
-    owx     xwo
-    owx     xwo
-xxxxoxxw   wxxoxxxx
-    owx     xwo
+    owxwwTwwxwo
+    owxwTTTwxwo
+xxxxoxxwTTTwxxoxxxx
+    owxwwwwwxwo
     owxxxxxxxwo
-    owx      wo
-    owx      wo
-oooooooooowooooooooo
-owwwo
-ooowo
-  owo
-  owo
-ooooo
+    owx     xwo
+    owx     xwo
+ooooooooowooooooooo
+owwwowwwowowwwowwwo
+moowoooooxooooowoom
+  owowo     owowo
+  owowo     owowo
+ooooowooowooowooooo
+o       owo       o
+ooooooooooooooooooo
