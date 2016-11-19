@@ -10,9 +10,12 @@
 #import "PacmanNode.h"
 #import "ViewDelegate.h"
 
-@interface GameScene()
+@interface GameScene() {
+    CGFloat gridWidth;
+    CGFloat gridHeight;
+}
+
 @property BOOL contentCreated;
-@property SKSpriteNode *pacman;
 @end
 
 @implementation GameScene
@@ -31,7 +34,7 @@
 - (void)createSceneContents {
     self.backgroundColor = [SKColor blackColor];
     self.scaleMode = SKSceneScaleModeAspectFit;
-    
+
     [self addChild:[self getMapNode]];
     [self addChild:[self getPacmanNode]];
 }
@@ -46,7 +49,7 @@
 - (PacmanNode *)getPacmanNode {
     PacmanNode *pacman = [[PacmanNode alloc] init];
     pacman.name = @"pacman";
-    
+
     pacman.position = CGPointMake(self.frame.size.width / 2, self.frame.size.height / 2);
     return pacman;
 }
@@ -55,7 +58,7 @@
 - (void)update:(NSTimeInterval)currentTime {
     NSArray *nodes = @[ @"pacman" ];
     SKNode<Character> *node = nil;
-    
+
     for (NSString *name in nodes) {
         node = (SKNode<Character> *)[self childNodeWithName:name];
         [node update:currentTime];
@@ -66,7 +69,7 @@
 - (void)keyUp:(NSEvent *)event {
     NSArray *nodes = @[ @"pacman" ];
     SKNode *node = nil;
-    
+
     for (NSString *name in nodes) {
         node = [self childNodeWithName:name];
         if ([node respondsToSelector:@selector(handleKeyEvent:)]) {
