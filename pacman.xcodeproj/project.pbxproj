@@ -15,6 +15,10 @@
 		83962AE31D6111F200DB64E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83962AE11D6111F200DB64E9 /* Main.storyboard */; };
 		83A782581DD9F4F800A2F284 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A782571DD9F4F800A2F284 /* GameScene.m */; };
 		83A7825B1DD9F6B600A2F284 /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A7825A1DD9F6B600A2F284 /* GameController.m */; };
+		83CA46251DE07D0F006145C4 /* map.txt in Resources */ = {isa = PBXBuildFile; fileRef = 83CA46241DE07D0F006145C4 /* map.txt */; };
+		83CA46281DE07D94006145C4 /* MapData.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CA46271DE07D94006145C4 /* MapData.m */; };
+		83CA462B1DE0ABE5006145C4 /* pean_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 83CA46291DE0ABE5006145C4 /* pean_big.png */; };
+		83CA462C1DE0ABE5006145C4 /* pean.png in Resources */ = {isa = PBXBuildFile; fileRef = 83CA462A1DE0ABE5006145C4 /* pean.png */; };
 		83E1C72F1DDD6082004CB94D /* PacmanNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E1C72E1DDD6082004CB94D /* PacmanNode.m */; };
 		83E1C73B1DDD6455004CB94D /* blue_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E1C7301DDD6455004CB94D /* blue_map.png */; };
 		83E1C73C1DDD6455004CB94D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83E1C7311DDD6455004CB94D /* logo.png */; };
@@ -46,6 +50,11 @@
 		83A782571DD9F4F800A2F284 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		83A782591DD9F6B600A2F284 /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 		83A7825A1DD9F6B600A2F284 /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		83CA46241DE07D0F006145C4 /* map.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = map.txt; sourceTree = "<group>"; };
+		83CA46261DE07D94006145C4 /* MapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapData.h; sourceTree = "<group>"; };
+		83CA46271DE07D94006145C4 /* MapData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapData.m; sourceTree = "<group>"; };
+		83CA46291DE0ABE5006145C4 /* pean_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pean_big.png; sourceTree = "<group>"; };
+		83CA462A1DE0ABE5006145C4 /* pean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pean.png; sourceTree = "<group>"; };
 		83E1C72D1DDD6082004CB94D /* PacmanNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacmanNode.h; sourceTree = "<group>"; };
 		83E1C72E1DDD6082004CB94D /* PacmanNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacmanNode.m; sourceTree = "<group>"; };
 		83E1C7301DDD6455004CB94D /* blue_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_map.png; sourceTree = "<group>"; };
@@ -75,6 +84,8 @@
 		831594791DDACCD80050AFC9 /* PacmanAssets.atlas */ = {
 			isa = PBXGroup;
 			children = (
+				83CA46291DE0ABE5006145C4 /* pean_big.png */,
+				83CA462A1DE0ABE5006145C4 /* pean.png */,
 				83E1C7301DDD6455004CB94D /* blue_map.png */,
 				83E1C7311DDD6455004CB94D /* logo.png */,
 				83E1C7321DDD6455004CB94D /* pacman_down_open_max.png */,
@@ -126,6 +137,7 @@
 		83962AD91D6111F200DB64E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				83CA46241DE07D0F006145C4 /* map.txt */,
 				83962ADA1D6111F200DB64E9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -148,6 +160,8 @@
 				83962AF41D61190800DB64E9 /* ViewDelegate.h */,
 				83E1C72D1DDD6082004CB94D /* PacmanNode.h */,
 				83E1C72E1DDD6082004CB94D /* PacmanNode.m */,
+				83CA46261DE07D94006145C4 /* MapData.h */,
+				83CA46271DE07D94006145C4 /* MapData.m */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -225,6 +239,7 @@
 				83E1C73C1DDD6455004CB94D /* logo.png in Resources */,
 				83962AE01D6111F200DB64E9 /* Assets.xcassets in Resources */,
 				83E1C7451DDD6455004CB94D /* pacman_up_open.png in Resources */,
+				83CA46251DE07D0F006145C4 /* map.txt in Resources */,
 				83962AE31D6111F200DB64E9 /* Main.storyboard in Resources */,
 				83E1C7441DDD6455004CB94D /* pacman_up_open_max.png in Resources */,
 				83E1C7401DDD6455004CB94D /* pacman_left_open_max.png in Resources */,
@@ -232,9 +247,11 @@
 				83E1C73B1DDD6455004CB94D /* blue_map.png in Resources */,
 				83E1C73D1DDD6455004CB94D /* pacman_down_open_max.png in Resources */,
 				83E1C7411DDD6455004CB94D /* pacman_left_open.png in Resources */,
+				83CA462B1DE0ABE5006145C4 /* pean_big.png in Resources */,
 				83E1C73F1DDD6455004CB94D /* pacman_full.png in Resources */,
 				83E1C7431DDD6455004CB94D /* pacman_right_open.png in Resources */,
 				83E1C7421DDD6455004CB94D /* pacman_right_open_max.png in Resources */,
+				83CA462C1DE0ABE5006145C4 /* pean.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +266,7 @@
 				83962ADB1D6111F200DB64E9 /* main.m in Sources */,
 				83962AD81D6111F200DB64E9 /* AppDelegate.m in Sources */,
 				83A7825B1DD9F6B600A2F284 /* GameController.m in Sources */,
+				83CA46281DE07D94006145C4 /* MapData.m in Sources */,
 				83A782581DD9F4F800A2F284 /* GameScene.m in Sources */,
 				83E1C72F1DDD6082004CB94D /* PacmanNode.m in Sources */,
 				831594781DDAB6770050AFC9 /* StartScene.m in Sources */,
