@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "EntityNode.h"
 
 #ifndef ViewDelegate_h
 #define ViewDelegate_h
@@ -18,5 +19,4 @@
 @protocol Character <NSObject>
 - (void)update:(NSTimeInterval)currentTime;
 @end
-
 #endif /* ViewDelegate_h */

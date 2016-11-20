@@ -14,7 +14,6 @@
 
 @property(weak) IBOutlet NSWindow *window;
 @property BOOL bGameStarted;
-
 @end
 
 

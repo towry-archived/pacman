@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "GameDelegate.h"
 
-@interface GameScene : SKScene
+@interface GameScene : SKScene <GameDelegate>
 @end

@@ -8,15 +8,10 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "ViewDelegate.h"
+#import "Node.h"
+#import "EntityNode.h"
 
-enum PacmanNodeDirection {
-    DirectionUp,
-    DirectionLeft,
-    DirectionRight,
-    DirectionDown,
-};
-
-@interface PacmanNode : SKSpriteNode <Character>
+@interface PacmanNode : EntityNode <Character>
 - (void)update:(NSTimeInterval)currentTime;
 - (void)handleKeyEvent:(NSEvent *)event;
 @end

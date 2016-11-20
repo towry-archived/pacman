@@ -9,44 +9,65 @@
 #import "PacmanNode.h"
 
 @interface PacmanNode()
-@property NSInteger index;
 @property NSTimeInterval timeCount;
-@property enum PacmanNodeDirection direction;
+@property NSUInteger textureIndex;
+@property BOOL bPause;
 @end
 
 @implementation PacmanNode
 #pragma mark - Override
 - (id)init {
     if (self = [super init]) {
+        self.entityType = EntityPacman;
         SKTexture *beanTexture = [SKTexture textureWithImageNamed:@"pacman_left_open.png"];
         self = [PacmanNode spriteNodeWithTexture:beanTexture];
+        [self scaleToSize:CGSizeMake(8, 8)];
     }
     
-    self.index = 0;
+    self.textureIndex = 0;
     self.timeCount = 0;
-    self.direction = DirectionLeft;
     
     return self;
 }
 
 - (void)update:(NSTimeInterval)currentTime {
+    if (self.bPause) {
+        return;
+    }
+    
     // This control the pacman mouth speed.
-    if (self.timeCount < 8) {
+    if (self.timeCount < 9) {
         self.timeCount += 1;
         return;
-    } else if (self.timeCount >= 8) {
+    } else if (self.timeCount >= 9) {
         self.timeCount = 0;
     }
     
-    if (self.index >= 2) {
-        self.index = 0;
+    if (self.textureIndex >= 2) {
+        self.textureIndex = 0;
     } else {
-        self.index += 1;
+        self.textureIndex += 1;
     }
     
-    NSString *textureName = [[self class] textureName:self.index direction:self.direction];
+    NSString *textureName = [[self class] textureName:self.textureIndex direction:self.direction];
     SKTexture *nextTexture = [SKTexture textureWithImageNamed:textureName];
     [self setTexture:nextTexture];
+    [self scaleToSize:CGSizeMake(8, 8)];
+    [self moveToNextPoint];
+}
+
+- (void)pause {
+    self.bPause = YES;
+}
+
+- (void)resume {
+    self.bPause = NO;
+}
+
+- (void)moveToNextPoint {
+    if (self.gameDelegate && [self.gameDelegate respondsToSelector:@selector(moveToNextPoint:)]) {
+        [self.gameDelegate moveToNextPoint:self];
+    }
 }
 
 #pragma mark - Event
@@ -73,7 +94,7 @@
 
 #pragma mark - Method
 
-+ (NSString *)textureName:(NSInteger)index direction:(enum PacmanNodeDirection)direction {
++ (NSString *)textureName:(NSInteger)index direction:(NodeDirection)direction {
     static NSArray *_textureNames;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

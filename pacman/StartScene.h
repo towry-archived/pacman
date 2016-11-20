@@ -10,7 +10,5 @@
 #import "ViewDelegate.h"
 
 @interface StartScene : SKScene
-
 @property(nonatomic, nullable, readwrite) id<ViewDelegate> viewDelegate;
-
 @end

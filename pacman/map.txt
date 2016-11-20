@@ -8,8 +8,8 @@ o   owo     owo   o
 ooooowooowooowooooo
     owwwxwxwwwowwww
     owxxxxxxxwo
-    owxwwTwwxwo
-    owxwTTTwxwo
+    owxwwxwwxwo
+    owxwxxxwxwo
 xxxxoxxwTTTwxxoxxxx
     owxwwwwwxwo
     owxxxxxxxwo
@@ -17,7 +17,7 @@ xxxxoxxwTTTwxxoxxxx
     owx     xwo
 ooooooooowooooooooo
 owwwowwwowowwwowwwo
-moowoooooxooooowoom
+moowoooooPooooowoom
   owowo     owowo
   owowo     owowo
 ooooowooowooowooooo

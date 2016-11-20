@@ -10,7 +10,5 @@
 #import <SpriteKit/SpriteKit.h>
 
 @interface GameController : NSViewController
-
 @property (assign) IBOutlet SKView *skView;
-
 @end
