@@ -16,6 +16,7 @@
 @interface EntityNode : SKSpriteNode
 @property NodeDirection direction;
 @property EntityEnum entityType;
-@property NSUInteger index;
+@property int x;
+@property int y;
 @property (nonatomic, nullable, readwrite) id<GameDelegate> gameDelegate;
 @end

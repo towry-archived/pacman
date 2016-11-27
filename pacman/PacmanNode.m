@@ -8,10 +8,15 @@
 
 #import "PacmanNode.h"
 
+const int kSpeed = 10;
+const int kMoveSpeed = 18;
+
 @interface PacmanNode()
 @property NSTimeInterval timeCount;
+@property NSTimeInterval moveTimeCount;
 @property NSUInteger textureIndex;
 @property BOOL bPause;
+@property BOOL animating;
 @end
 
 @implementation PacmanNode
@@ -26,20 +31,23 @@
     
     self.textureIndex = 0;
     self.timeCount = 0;
+    self.moveTimeCount = 0;
+    self.animating = NO;
     
     return self;
 }
 
 - (void)update:(NSTimeInterval)currentTime {
+    [self moveToNextPoint];
     if (self.bPause) {
         return;
     }
     
     // This control the pacman mouth speed.
-    if (self.timeCount < 9) {
+    if (self.timeCount < kSpeed) {
         self.timeCount += 1;
         return;
-    } else if (self.timeCount >= 9) {
+    } else if (self.timeCount >= kSpeed) {
         self.timeCount = 0;
     }
     
@@ -53,7 +61,6 @@
     SKTexture *nextTexture = [SKTexture textureWithImageNamed:textureName];
     [self setTexture:nextTexture];
     [self scaleToSize:CGSizeMake(8, 8)];
-    [self moveToNextPoint];
 }
 
 - (void)pause {
@@ -65,9 +72,44 @@
 }
 
 - (void)moveToNextPoint {
-    if (self.gameDelegate && [self.gameDelegate respondsToSelector:@selector(moveToNextPoint:)]) {
-        [self.gameDelegate moveToNextPoint:self];
+    if (self.animating) {
+        self.moveTimeCount = 0;
+        return;
     }
+    
+    if (self.moveTimeCount < kMoveSpeed) {
+        self.moveTimeCount += 1;
+        return;
+    } else if (self.moveTimeCount >= kMoveSpeed) {
+        self.moveTimeCount = 0;
+    }
+    
+    EntityNode *next;
+    if (self.gameDelegate && [self.gameDelegate respondsToSelector:@selector(getNextNode:)]) {
+        next = [self.gameDelegate getNextNode:self];
+    }
+    
+    if (next == nil) {
+        [self pause];
+        return;
+    }
+    
+    if (next.entityType != EntityWall) {
+        SKAction *moveToNext = [SKAction moveTo:next.position duration:0.3];
+        self.animating = YES;
+        [self runAction:moveToNext completion:^(void) {
+            self.x = next.x;
+            self.y = next.y;
+            // Remove node.
+            if (next.entityType == EntityPean ||
+                next.entityType == EntityBigPean) {
+                [next removeFromParent];
+            }
+            self.animating = NO;
+        }];
+        return;
+    }
+    [self pause];
 }
 
 #pragma mark - Event
@@ -89,6 +131,10 @@
             break;
         default:
             return;
+    }
+    
+    if (self.bPause) {
+        [self resume];
     }
 }
 

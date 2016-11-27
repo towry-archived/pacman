@@ -13,7 +13,8 @@
     if (self = [super init]) {
         self.entityType = EntityWall;
         self.direction = DirectionLeft;
-        self.index = 0;
+        self.x = -1;
+        self.y = -1;
     }
     
     return self;

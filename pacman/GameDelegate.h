@@ -15,7 +15,7 @@
 #define GameDelegate_h
 
 @protocol GameDelegate <NSObject>
-- (void)moveToNextPoint:(EntityNode *)node;
+- (EntityNode *)getNextNode:(EntityNode *)node;
 @end
 
 #endif /* GameDelegate_h */

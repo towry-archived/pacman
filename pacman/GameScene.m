@@ -15,9 +15,10 @@
 
 const int kSpace = 8;
 const int kGridH = 19;
+const int kGridV = 25;
 
 @interface GameScene() {
-    NSMutableArray *nodeMap;
+    EntityNode *nodeMap[kGridV][kGridH];
 }
 @property BOOL contentCreated;
 @end
@@ -69,36 +70,44 @@ const int kGridH = 19;
     __block int x = 0;
     __block int y = blueMap.position.y + (blueMap.frame.size.height * 0.5) - topOffset;
     
-    nodeMap = [NSMutableArray arrayWithCapacity:20];
+//    nodeMap = [NSMutableArray arrayWithCapacity:20];
     [map map:^(NSArray *data){
         NSUInteger count = [data count];
-        NSUInteger i;
-        for (i = 0; i < count; i++) {
+        NSLog(@"%ld", count);
+
+        for (int i = 0; i < count; i++) {
             NSString *line = [data objectAtIndex:i];
             
             x = blueMap.position.x - (blueMap.frame.size.width * 0.5) + leftOffset;
             y -= kSpace;
-            
+
             NSUInteger lineLength = line.length;
-            for (NSInteger j = 0; j < kGridH; j++) {
+            if (lineLength < 2) {
+                continue;
+            }
+            
+            for (int j = 0; j < kGridH; j++) {
                 EntityEnum entity;
                 EntityNode *node;
                 if (j < lineLength) {
                     entity = [self getEntity:[line characterAtIndex:j]];
                     node = [self getNodeByEntity:entity];
                 } else {
-                    entity = EntityWall;
-                    node = nil;
+                    node = [[EntityNode alloc] init];
+                    node.entityType = EntityWall;
                 }
                 
                 if (node != nil) {
-                    node.position = CGPointMake(x, y);
-                    node.index = i + j;
-                    [node setGameDelegate:self];
-                    [self addChild:node];
-                    [nodeMap addObject:node];
+                    node.x = j;
+                    node.y = i;
+                    if (node.entityType != EntityWall) {
+                        node.position = CGPointMake(x, y);
+                        [node setGameDelegate:self];
+                        [self addChild:node];
+                    }
+                    nodeMap[i][j] = node;
                 } else {
-                    [nodeMap addObject:@""];
+                    nodeMap[i][j] = nil;
                 }
                 
                 x += kSpace;
@@ -139,6 +148,8 @@ const int kGridH = 19;
             node = [self getPacmanNode];
             break;
         default:
+            node = [[EntityNode alloc] init];
+            node.entityType = EntityWall;
             break;
     }
     return node;
@@ -164,55 +175,53 @@ const int kGridH = 19;
     }
 }
 
-- (void)moveToNextPoint:(EntityNode *)node {
-    NSUInteger nodeIndex = node.index;
+- (EntityNode *)getNextNode:(EntityNode *)node {
     NodeDirection dir = node.direction;
-    EntityNode *next = [self getNextNode:nodeIndex direction:dir];
-    if (next == nil || [next isEqual: @""]) {
-        return;
-    } else {
-        node.position = next.position;
-        [next removeFromParent];
-    }
+    EntityNode *next = [self _getNextNode:dir x:node.x y:node.y];
+    return next;
 }
 
-- (nullable EntityNode *)getNextNode:(NSUInteger)nodeIndex direction:(NodeDirection)dir {
-    NSUInteger indexAtRow = nodeIndex % kGridH;
-    NSUInteger nextIndex;
+- (EntityNode *)_getNextNode:(NodeDirection)dir x:(int)x y:(int)y {
+    int _x, _y;
     
     switch (dir) {
         case DirectionUp:
-            nextIndex = nodeIndex - kGridH;
+            NSLog(@"dir: up");
+            _x = x;
+            _y = y - 1;
+            if (_y < 0) {
+                return nil;
+            }
             break;
         case DirectionDown:
-            nextIndex = nodeIndex + kGridH;
+            NSLog(@"dir: down");
+            _x = x;
+            _y = y + 1;
+            if (_y >= kGridV) {
+                return nil;
+            }
             break;
         case DirectionLeft:
-            if (indexAtRow == 1) {
-                nextIndex = -1;
-            } else {
-                nextIndex = nodeIndex - 1;
+            NSLog(@"dir: left");
+            _x = x - 1;
+            _y = y;
+            if (_x < 0) {
+                return nil;
             }
             break;
         case DirectionRight:
-            if (indexAtRow == 0) {
-                nodeIndex = -1;
-            } else {
-                nextIndex = nodeIndex + 1;
+            NSLog(@"dir: right");
+            _x = x + 1;
+            _y = y;
+            if (_x >= kGridH) {
+                return nil;
             }
             break;
         default:
-            nodeIndex = -1;
-            break;
+            return nil;
     }
-    
-    NSLog(@"%lu - %lu", (unsigned long)nodeIndex, (unsigned long)nextIndex);
-    
-    if (nextIndex == -1) {
-        return nil;
-    }
-    
-    return [nodeMap objectAtIndex:nextIndex];
+    NSLog(@"previous: (%d, %d), next: (%d, %d)", y, x, _y, _x);
+    return nodeMap[_y][_x];
 }
 
 #pragma mark - Event
